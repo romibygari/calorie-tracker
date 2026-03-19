@@ -1,0 +1,53 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String
+  calorieTarget Int       @default(2000)
+  proteinTarget Int       @default(150)
+  carbTarget    Int       @default(250)
+  fatTarget     Int       @default(65)
+  createdAt     DateTime  @default(now())
+  logs          FoodLog[]
+}
+
+model FoodItem {
+  id          Int       @id @default(autoincrement())
+  name        String
+  brand       String?
+  calories    Float
+  protein     Float
+  carbs       Float
+  fat         Float
+  fiber       Float     @default(0)
+  servingSize Float     @default(100)
+  servingUnit String    @default("g")
+  isCustom    Boolean   @default(false)
+  createdBy   Int?
+  createdAt   DateTime  @default(now())
+  logs        FoodLog[]
+}
+
+model FoodLog {
+  id               Int      @id @default(autoincrement())
+  userId           Int
+  foodItemId       Int
+  logDate          DateTime @db.Date
+  meal             String
+  quantity         Float
+  caloriesConsumed Float
+  proteinConsumed  Float
+  carbsConsumed    Float
+  fatConsumed      Float
+  createdAt        DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  foodItem FoodItem @relation(fields: [foodItemId], references: [id])
+}
