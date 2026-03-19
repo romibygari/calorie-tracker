@@ -11,7 +11,8 @@
       "android": {
         "buildType": "apk"
       },
-      "distribution": "internal"
+      "distribution": "internal",
+      "prebuildCommand": "npx expo prebuild --platform android --non-interactive && sed -i 's/gradle-[0-9.]*-all/gradle-8.3-all/g' android/gradle/wrapper/gradle-wrapper.properties"
     },
     "production": {
       "android": {
