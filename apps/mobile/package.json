@@ -6,7 +6,9 @@
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
-    "build:apk": "eas build --platform android --profile preview"
+    "build:apk": "eas build --platform android --profile preview",
+    "ios": "expo run:ios",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@types/react": "~18.3.12",
+    "patch-package": "^8.0.1",
     "typescript": "^5.4.5"
   }
 }
