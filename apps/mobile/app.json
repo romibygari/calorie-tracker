@@ -4,22 +4,15 @@
     "slug": "calorie-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
       "package": "com.calorietracker.app"
     },
     "extra": {
-      "apiBaseUrl": "https://your-app.onrender.com"
+      "apiBaseUrl": "https://calorie-tracker-dyi5.onrender.com",
+      "eas": {
+        "projectId": "c7ad09f2-af5c-4384-8e20-5afa53e8d496"
+      }
     }
   }
 }
