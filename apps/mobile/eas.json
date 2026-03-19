@@ -11,8 +11,7 @@
       "android": {
         "buildType": "apk"
       },
-      "distribution": "internal",
-      "prebuildCommand": "CI=1 npx expo prebuild --platform android && node -e \"const fs=require('fs'),f='android/gradle/wrapper/gradle-wrapper.properties';fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace(/gradle-[0-9.]+-all/g,'gradle-8.3-all'))\""
+      "distribution": "internal"
     },
     "production": {
       "android": {
