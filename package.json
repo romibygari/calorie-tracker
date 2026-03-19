@@ -2,7 +2,8 @@
   "name": "calorie-tracker",
   "private": true,
   "workspaces": [
-    "apps/backend"
+    "apps/backend",
+    "apps/web"
   ],
   "scripts": {
     "backend": "npm run dev --workspace=apps/backend"
